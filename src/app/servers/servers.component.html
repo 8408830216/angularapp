@@ -1,0 +1,18 @@
+<p>Server works!</p>
+<h2 class="warning">This is a warning you are in a danger!</h2>
+<h2 class="tagLine">You Are so successful!</h2>
+<label>{{name}}</label>
+<p>Server with Id {{serverId}} is {{getServerStatus()}}</p>
+
+<button [disabled]="!allowNewServer" (click)="onCreateServer()"> </button> 
+
+<div>{{serverCreationStatus}} </div>
+<!-- <img [src]="imgUrl"> -->
+
+<div>
+    This is the two way databinding
+</div>
+<div>
+    <input type="text" [(ngModel)]="serverName">
+</div>
+{{serverName}}

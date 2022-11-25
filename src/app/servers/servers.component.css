@@ -1,0 +1,12 @@
+.warning{
+    background-color: rgb(109, 189, 109);
+    border: 1px solid black;
+}
+.tagLine{
+    background-color: rgb(206, 137, 137);
+    border: 1px solid black;
+}
+button{
+    height: 30px ;
+    width: 70px;
+}

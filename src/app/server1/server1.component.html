@@ -1,0 +1,9 @@
+<div>
+    <span>Username:<input type="text"  [(ngModel)]="userName"> </span>
+</div>
+<br>
+<div> Username is :{{userName}} </div>
+<br>
+
+<br>
+<button [disabled]="allowNewServer" (click)="onClickReset()"  > Reset</button> 
