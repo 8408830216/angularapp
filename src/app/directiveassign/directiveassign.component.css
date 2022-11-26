@@ -1,0 +1,24 @@
+
+th{
+    font-size: 30px;
+    background-color: aqua;
+}
+td{
+    background-color: rgb(221, 70, 176);
+    font-size: 20px;
+}
+
+.checked{
+    background-color: aquamarine;
+    text-align: center;
+    font-size: 30px;
+}
+input{
+    height: 30px;
+    width: 30px;
+}
+.check{
+    text-align:center;
+    background-color: rgb(74, 102, 155);
+    font-size: 20px;
+}

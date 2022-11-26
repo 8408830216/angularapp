@@ -4,7 +4,7 @@
 <label>{{name}}</label>
 <p>Server with Id {{serverId}} is {{getServerStatus()}}</p>
 
-<button [disabled]="!allowNewServer" (click)="onCreateServer()"> </button> 
+<button [disabled]="!allowNewServer" class="btn btn-primary" (click)="onCreateServer()" >server </button> 
 
 <div>{{serverCreationStatus}} </div>
 <!-- <img [src]="imgUrl"> -->

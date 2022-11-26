@@ -1,0 +1,21 @@
+<h2 style="text-align:center">3) ngSwitch example</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <select class="form-control" (change)="getProductValue($event)">
+                <option value="Default">Select Company</option>
+                <option value="Tata Consultancy Service">Tata Consultancy Service</option>
+                <option value="Infosys">Infosys</option>
+                <option value="HCL Technologies">HCL Technologies</option>
+                <option value="Wipro Limited">Wipro Limited</option>
+            </select>
+        </div>
+        <div class="col-md-12" [ngSwitch]="selectedProduct">
+            <h2 class="text-success" *ngSwitchDefault>Please select Company</h2>
+            <h2 class="text-success" *ngSwitchCase="'Tata Consultancy Service'">Tata Consultancy Service</h2>
+            <h2 class="text-success" *ngSwitchCase="'Infosys'">Infosys</h2>
+            <h2 class="text-success" *ngSwitchCase="'HCL Technologies'">HCL Technologies</h2>
+            <h2 class="text-success" *ngSwitchCase="'Wipro Limited'">Wipro Limited</h2>
+        </div>
+    </div>
+</div>
