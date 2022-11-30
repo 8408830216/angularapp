@@ -41,7 +41,55 @@
 <br>
 <br>
 <br>
+<app-attri></app-attri>
 
+<!-- <app-demo  [myInputMsg]="uname"></app-demo> -->
+
+<app-childassign [name]="data"></app-childassign>
+
+
+<br>
+<br>
+
+<ul *ngFor="let f of foods">
+  <li>{{f}}</li>
+</ul>
+<div>
+  <app-demo (foodevent)="getDataFromChild($event)">
+
+  </app-demo>
+</div>
+<br>
+<br>
+<br>
+<div>
+  <app-outputassign (bikesDetail)="getDataFromChildOut($event)"> </app-outputassign>
+  <br>
+  <br>
+ <table class="table table-striped table-dark">
+  <thead>
+    <tr>
+    <th>Bike Name</th>
+    <th>Bike Company</th>
+    <th>On Road Price</th>
+    <th>Model</th>
+    <th>Mileage</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let bkes of bikes">
+      <td>{{bkes.bike_name}}</td>
+      <td>{{bkes.bike_company}}</td>
+      <td>{{bkes.on_road_price}}</td>
+      <td>{{bkes.model}}</td>
+      <td>{{bkes.mileage}}</td>
+    </tr>
+
+  </tbody>
+ </table>
+
+  
+</div>
 <router-outlet></router-outlet>
 
 

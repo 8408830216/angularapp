@@ -11,6 +11,11 @@ import { DemodirectivesComponent } from './demodirectives/demodirectives.compone
 import { NgswitchComponent } from './ngswitch/ngswitch.component';
 import { DirectiveassignComponent } from './directiveassign/directiveassign.component';
 import { NgassignmentComponent } from './ngassignment/ngassignment.component';
+import { AttriComponent } from './attri/attri.component';
+import { CustdirDirective } from './custdir.directive';
+import { DemoComponent } from './demo/demo.component';
+import { ChildassignComponent } from './childassign/childassign.component';
+import { OutputassignComponent } from './outputassign/outputassign.component';
 
 
 @NgModule({
@@ -22,7 +27,12 @@ import { NgassignmentComponent } from './ngassignment/ngassignment.component';
     DemodirectivesComponent,
     NgswitchComponent,
     DirectiveassignComponent,
-    NgassignmentComponent
+    NgassignmentComponent,
+    AttriComponent,
+    CustdirDirective,
+    DemoComponent,
+    ChildassignComponent,
+    OutputassignComponent
   ],
   imports: [
     BrowserModule,
