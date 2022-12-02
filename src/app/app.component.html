@@ -1,4 +1,4 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<!-- The content below is only a placeholder and can be replaced. -->
 <app-ngswitch></app-ngswitch>
 <div style="text-align:center">
   <h1>
@@ -90,6 +90,17 @@
 
   
 </div>
+<div>
+  <select (change)="uid = sid.value" #sid>
+    <option selected disabled>No value selected</option>
+    <option [value]="id" *ngFor="let id of [1,2,3,4]">
+      {{id}}
+    </option>
+  </select>
+  <app-hooks [userid]="uid"></app-hooks>
+</div>
+
+<app-directassign></app-directassign>
 <router-outlet></router-outlet>
 
 

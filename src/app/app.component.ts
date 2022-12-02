@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'angularapp';
   // uname='Iam from app componant'
   fromParentChild="Iam From app Componant"
+  public uid: number;
 
 data={
   fullName:"Prashant patil",

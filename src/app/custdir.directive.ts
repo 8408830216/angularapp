@@ -5,7 +5,8 @@ import { Directive, ElementRef, Renderer2 } from '@angular/core';
 })
 export class CustdirDirective {
 
-  constructor(private el:ElementRef,private render:Renderer2) { 
+  constructor(private el:ElementRef,private render:Renderer2) //dependency injection concept
+    {   
     console.log("Custom Directive Applied");
     // el.nativeElement.style.backgroundColor='gray';
     //  el.nativeElement.style.display='none';

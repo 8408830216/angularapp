@@ -16,6 +16,8 @@ import { CustdirDirective } from './custdir.directive';
 import { DemoComponent } from './demo/demo.component';
 import { ChildassignComponent } from './childassign/childassign.component';
 import { OutputassignComponent } from './outputassign/outputassign.component';
+import { HooksComponent } from './hooks/hooks.component';
+import { DirectassignComponent } from './directassign/directassign.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { OutputassignComponent } from './outputassign/outputassign.component';
     CustdirDirective,
     DemoComponent,
     ChildassignComponent,
-    OutputassignComponent
+    OutputassignComponent,
+    HooksComponent,
+    DirectassignComponent
   ],
   imports: [
     BrowserModule,
