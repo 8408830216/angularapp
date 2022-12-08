@@ -1,16 +1,16 @@
 <!-- The content below is only a placeholder and can be replaced. -->
-<app-ngswitch></app-ngswitch>
+<!-- <app-ngswitch></app-ngswitch> -->
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <app-servers></app-servers>
+  <!-- <app-servers></app-servers> -->
   
   <hr>
   <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
 
-<h2>Here are some links to help you start: </h2>
+<!-- <h2>Here are some links to help you start: </h2>
 <ul>
   <li>
     <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
@@ -21,48 +21,50 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
-<app-server1></app-server1>
-<br>
-<br>
+</ul> -->
+<!-- <app-server1></app-server1> -->
+<!-- <br>
+<br> -->
 <!-- <button type="button" class="btn btn-primary">Primary</button> -->
 <br>
-<app-demodirectives></app-demodirectives>
+<!-- <app-demodirectives></app-demodirectives> -->
+<!-- <br>
 <br>
-<br>
-<hr>
+<hr> -->
 
-<app-directiveassign></app-directiveassign>
-<br>
-<hr>
-<app-ngassignment></app-ngassignment>
-<br>
-<br>
-<br>
+<!-- <app-directiveassign></app-directiveassign> -->
+<!-- <br>
+<hr> -->
+<!-- <app-ngassignment></app-ngassignment> -->
+<!-- <br>
 <br>
 <br>
-<app-attri></app-attri>
+<br>
+<br> -->
+<!-- <app-attri></app-attri> -->
 
 <!-- <app-demo  [myInputMsg]="uname"></app-demo> -->
 
-<app-childassign [name]="data"></app-childassign>
+<!-- <app-childassign [name]="data"></app-childassign> -->
 
+<!-- <div  *ngFor="let e of employeeRecord">
+<app-demo [employeeName]="e.eName"> </app-demo>
+</div> -->
+<!-- <br>
+<br> -->
 
-<br>
-<br>
-
-<ul *ngFor="let f of foods">
+<!-- <ul *ngFor="let f of foods">
   <li>{{f}}</li>
-</ul>
-<div>
+</ul> -->
+<!-- <div>
   <app-demo (foodevent)="getDataFromChild($event)">
 
   </app-demo>
 </div>
 <br>
 <br>
-<br>
-<div>
+<br> -->
+<!-- <div>
   <app-outputassign (bikesDetail)="getDataFromChildOut($event)"> </app-outputassign>
   <br>
   <br>
@@ -87,20 +89,35 @@
 
   </tbody>
  </table>
-
+<app-addassignment></app-addassignment>
   
-</div>
-<div>
-  <select (change)="uid = sid.value" #sid>
+</div> -->
+
+  <!-- <select (change)="uid = sid.value" #sid>
     <option selected disabled>No value selected</option>
     <option [value]="id" *ngFor="let id of [1,2,3,4]">
       {{id}}
     </option>
-  </select>
-  <app-hooks [userid]="uid"></app-hooks>
-</div>
+  </select> -->
 
-<app-directassign></app-directassign>
+<!-- <div class="row" style="text-align:center;">
+  <div class="col-md-12">
+  <input type="text" placeholder="enter value" (blur)="handledata($event)">
+
+  <p>Product name: <input type="text" placeholder="enter product name" [(ngModel)]="name"></p>
+  <p> Enter Price: <input type="text" placeholder="Enter product Price" [(ngModel)]="price"></p>
+<button class="btn btn-primary" (click)="updateProduct()">Update product</button>
+
+  <app-hooks *ngIf="appchildExist" [userid]="uid" [parentData]="data1" [product]="product" >
+    <h2 #child>This is child content coming from parent component</h2>     this is called content projection -->
+  <!-- </app-hooks> -->
+<!-- </div>
+</div>  -->
+<!-- <app-directassign></app-directassign> -->
+
+
+<!-- <button class="btn btn-danger" (click)="destroy()">Destroy component</button> -->
+<app-simpletemplateform></app-simpletemplateform>
 <router-outlet></router-outlet>
 
 

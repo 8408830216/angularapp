@@ -18,11 +18,13 @@ import { ChildassignComponent } from './childassign/childassign.component';
 import { OutputassignComponent } from './outputassign/outputassign.component';
 import { HooksComponent } from './hooks/hooks.component';
 import { DirectassignComponent } from './directassign/directassign.component';
+import { AddassignmentComponent } from './addassignment/addassignment.component';
+import { SimpletemplateformComponent } from './simpletemplateform/simpletemplateform.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent, 
     ServerComponent,
     ServersComponent,
     Server1Component,
@@ -36,7 +38,9 @@ import { DirectassignComponent } from './directassign/directassign.component';
     ChildassignComponent,
     OutputassignComponent,
     HooksComponent,
-    DirectassignComponent
+    DirectassignComponent,
+    AddassignmentComponent,
+    SimpletemplateformComponent
   ],
   imports: [
     BrowserModule,
