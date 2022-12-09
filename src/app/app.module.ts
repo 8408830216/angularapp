@@ -20,6 +20,7 @@ import { HooksComponent } from './hooks/hooks.component';
 import { DirectassignComponent } from './directassign/directassign.component';
 import { AddassignmentComponent } from './addassignment/addassignment.component';
 import { SimpletemplateformComponent } from './simpletemplateform/simpletemplateform.component';
+import { FormassignmentComponent } from './formassignment/formassignment.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { SimpletemplateformComponent } from './simpletemplateform/simpletemplate
     HooksComponent,
     DirectassignComponent,
     AddassignmentComponent,
-    SimpletemplateformComponent
+    SimpletemplateformComponent,
+    FormassignmentComponent
   ],
   imports: [
     BrowserModule,

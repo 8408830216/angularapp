@@ -1,0 +1,16 @@
+div{
+    padding-top: 10px;
+    padding-left: 10px;
+    
+}
+label{
+    padding-left: 10px;
+}
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+    box-shadow: 0 0 13px #ff000021;
+}
+
+.container{
+    background-color: rgb(233, 220, 220);
+}

@@ -1,0 +1,50 @@
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12 text-left rounded shadow py-15">
+            <form (ngSubmit)="OnSubmit(myForm)" #myForm="ngForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="name" ngModel required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" email name="email" placeholder="Enter email" ngModel required>
+
+                </div>
+                <div class="form-group" >
+                    <label> Password:</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="password" ngModel required>
+                </div>
+                <div class="form-group">
+                    <label> Date of Birth:</label>&nbsp;&nbsp;
+                    <input type="date">
+                </div>
+                <div class="form-group">
+                    <label>Gender:</label> &nbsp; &nbsp;
+                    <input type="radio" name="Gender"><label>male</label>&nbsp;
+                    <input type="radio" name="Gender"><label>female</label>
+                </div>
+                <div class="form-group">
+                    <label> Country: </label> &nbsp;
+                    <input type="text" placeholder="Country">
+                </div>
+               
+                <div class="form-group">
+                    <label for="course">Select Course</label>
+                    <select class="form-control" name="course" id="course" ngModel>
+                <option value="UI Developer">UI Developer</option>
+                <option value="Backend Developer">Backend Developer</option>
+                <option value="Full Stack Developer">Full Stack Developer</option>
+                <option value="DevOps Engineer ">DevOps Engineer </option>
+                <option value="Tester">Tester </option>
+                    </select>
+                </div>
+
+                <button  type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Submit</button>
+                &nbsp; &nbsp; &nbsp;
+                <button type="reset" class="btn btn-primary">Reset</button>
+            </form>
+        </div>
+    </div>
+</div>
