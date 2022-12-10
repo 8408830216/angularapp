@@ -1,3 +1,4 @@
+
 div{
     padding-top: 10px;
     padding-left: 10px;
@@ -13,4 +14,12 @@ input.ng-invalid.ng-touched {
 
 .container{
     background-color: rgb(233, 220, 220);
+    border: 2px solid rgb(27, 25, 25);
+    border-radius: 20px;
+    
+    
+}
+h1{
+    text-align: center;
+    background-color: rgb(250, 126, 126);
 }

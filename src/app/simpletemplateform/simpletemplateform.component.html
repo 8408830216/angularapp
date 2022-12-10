@@ -24,8 +24,8 @@
                     </select>
                 </div>
                 <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Submit</button>
-                <div class="row justify-content-center mt-2" *ngIf="submitted"> 
-                    <div class="col0md-6 rounded shadow py-4"  >
+                <div class="row justify-content-center mt-2" > 
+                    <div class="col-md-6 rounded shadow py-4"  >
                         <h2>Form data</h2>
                         <p>Username <strong>{{employee.username}}</strong></p>
                         <p>Email <strong>{{employee.email}}</strong></p>

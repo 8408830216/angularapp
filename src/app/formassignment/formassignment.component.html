@@ -1,50 +1,91 @@
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12 text-left rounded shadow py-15">
-            <form (ngSubmit)="OnSubmit(myForm)" #myForm="ngForm">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="name" ngModel required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" email name="email" placeholder="Enter email" ngModel required>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-left rounded shadow py-15">
 
-                </div>
-                <div class="form-group" >
-                    <label> Password:</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="password" ngModel required>
-                </div>
-                <div class="form-group">
-                    <label> Date of Birth:</label>&nbsp;&nbsp;
-                    <input type="date">
-                </div>
-                <div class="form-group">
-                    <label>Gender:</label> &nbsp; &nbsp;
-                    <input type="radio" name="Gender"><label>male</label>&nbsp;
-                    <input type="radio" name="Gender"><label>female</label>
-                </div>
-                <div class="form-group">
-                    <label> Country: </label> &nbsp;
-                    <input type="text" placeholder="Country">
-                </div>
-               
-                <div class="form-group">
-                    <label for="course">Select Course</label>
-                    <select class="form-control" name="course" id="course" ngModel>
-                <option value="UI Developer">UI Developer</option>
-                <option value="Backend Developer">Backend Developer</option>
-                <option value="Full Stack Developer">Full Stack Developer</option>
-                <option value="DevOps Engineer ">DevOps Engineer </option>
-                <option value="Tester">Tester </option>
-                    </select>
-                </div>
+                    <form (ngSubmit)="OnSubmit(myForm)" #myForm="ngForm">
+                        
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="name" ngModel
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email" email name="email"
+                                    placeholder="Enter email" ngModel required>
 
-                <button  type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Submit</button>
-                &nbsp; &nbsp; &nbsp;
-                <button type="reset" class="btn btn-primary">Reset</button>
-            </form>
+                            </div>
+                            <div class="form-group">
+                                <label for="password"> Password</label>
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="password" ngModel required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dateOfBirth"> Date of Birth</label>&nbsp;&nbsp;
+                                <input type="text" name="dateOfBirth" id="dateOfBirth" placeholder="dd-mm-yyyy" ngModel>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender:</label> &nbsp; &nbsp;
+                                <input type="radio" name="gender" id="gender" value="Male" ngModel><label>Male</label>
+                                &nbsp;
+                                <input type="radio" name="gender" id="gender" value="Female"
+                                    ngModel><label>Female</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="city"> City: </label> &nbsp;
+                                <input type="text" class="form-control" id="city" name="city" placeholder="city"
+                                    ngModel>
+                            </div>
+                            <div class="form-group">
+                                <label for="pincode"> Pincode: </label> &nbsp;
+                                <input type="text" class="form-control" id="pincode" name="pincode"
+                                    placeholder="pincode" ngModel>
+                            </div>
+                            <div class="form-group">
+                                <label for="state"> State: </label> &nbsp;
+                                <input type="text" class="form-control" id="state" name="state" placeholder="state"
+                                    ngModel>
+                            </div>
+                            <div class="form-group">
+                                <label for="country"> Country: </label> &nbsp;
+                                <input type="text" class="form-control" id="country" name="country"
+                                    placeholder="country" ngModel>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="course">Select Course</label>
+                                <select class="form-control" name="course" id="course" [ngModel]="defaultValue">
+                                    <option value="UI Developer">UI Developer</option>
+                                    <option value="Backend Developer">Backend Developer</option>
+                                    <option value="Full Stack Developer">Full Stack Developer</option>
+                                    <option value="DevOps Engineer ">DevOps Engineer </option>
+                                    <option value="Tester">Tester </option>
+                                </select>
+                            </div>
+
+                            <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Submit</button>
+                            &nbsp; &nbsp; &nbsp;
+                            <button type="reset" class="btn btn-primary">Reset</button>
+                        
+                    </form>
+                </div>
         </div>
     </div>
-</div>
+    
+        <div class="row justify-content-center mt-2" *ngIf="submitted">
+            <div class="col-md-4 rounded shadow py-4" [ngStyle]="{'background-color':'#ffcccc'}">
+                <h1> User Form Details</h1>
+                <p>Name: <strong>{{student.name}}</strong></p>
+                <p>Email address:<strong>{{student.email}}</strong></p>
+                <p>Password:<strong>{{student.password}}</strong></p>
+                <p>Date of Birth:<strong>{{student.dateOfBirth}}</strong></p>
+                <p>Gender:<strong>{{student.gender}}</strong></p>
+                <p>Country:<strong>{{student.city}}</strong></p>
+                <p>Country:<strong>{{student.pincode}}</strong></p>
+                <p>Country:<strong>{{student.state}}</strong></p>
+                <p>Country:<strong>{{student.country}}</strong></p>
+                <p>Select Course:<strong>{{student.course}}</strong></p>
+            </div>
+        </div>
+    
