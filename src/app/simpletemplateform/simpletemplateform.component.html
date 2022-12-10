@@ -10,8 +10,13 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" #email="ngModel" email name="email" placeholder="Enter email" ngModel required>
-                    <small *ngIf="!email.valid && email.touched">Enter valid Email</small>
+                    <!-- <input type="email" class="form-control" id="email" #email="ngModel" email name="email" placeholder="ex- abc@codemindtechnology.com" ngModel required>
+                    <small *ngIf="!email.valid && email.touched" >Enter valid Email</small> -->
+                    <input type="email" class="form-control" name="email" ngModel #email="ngModel" pattern="@codemindtechnology.com" required>
+                <small *ngIf="email.touched">
+                    <p *ngIf="email.errors?.required">Email is required</p>
+                    <p *ngIf="email.errors?.pattern">valid email domain is @codemindtechnology.com</p>
+                </small>
                 </div>
                 <small *ngIf="!userDetails.valid && userDetails.touched">Please enter valid details</small>
             </div>
@@ -23,13 +28,25 @@
                         <option value="JavaScript">JavaScript</option>
                     </select>
                 </div>
+
+                <div class="form-group">
+                    <div *ngFor="let gender of genders" class="custom-control custom-radio" >
+                    <input type="radio" id="{{gender.id}}" name="gender" value="{{gender.value}}" [ngModel]="defaultGender" class="custom-control-input">
+                    <label for="{{gender.id}}" class="custom-control-label">{{gender.value}}</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="date"  min="{{currentDate | date:'yyyy-MM-dd'}}" placeholder="Date"/>
+                </div>
+
                 <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Submit</button>
-                <div class="row justify-content-center mt-2" > 
+                <div class="row justify-content-center mt-2"  *ngIf="submitted"> 
                     <div class="col-md-6 rounded shadow py-4"  >
                         <h2>Form data</h2>
-                        <p>Username <strong>{{employee.username}}</strong></p>
-                        <p>Email <strong>{{employee.email}}</strong></p>
-                        <p>Course <strong>{{employee.course}}</strong></p>
+                        <p>Username:<strong>{{employee.username}}</strong></p>
+                        <p>Email:<strong>{{employee.email}}</strong></p>
+                        <p>Course:<strong>{{employee.course}}</strong></p>
+                        <p>Gender:<strong>{{employee.gender}}</strong></p>
                     </div>
 
                 </div>
