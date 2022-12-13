@@ -22,6 +22,7 @@ this.subscription.subscription=form.value.subscription;
 this.subscription.password=form.value.password;
 form.reset();
 form.controls['subscription'].setValue('Advanced'); 
+console.log(form.controls)
 this.saveUserData(this.subscription);
   }
   saveUserData(sub:Subscription){
