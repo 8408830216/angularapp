@@ -12,9 +12,8 @@
                     <label for="email">Email address</label>
                     <!-- <input type="email" class="form-control" id="email" #email="ngModel" email name="email" placeholder="ex- abc@codemindtechnology.com" ngModel required>
                     <small *ngIf="!email.valid && email.touched" >Enter valid Email</small> -->
-                    <input type="email" class="form-control" name="email" ngModel #email="ngModel" pattern="@codemindtechnology.com" required>
+                    <input type="email" class="form-control" name="email" ngModel #email="ngModel" pattern=".+@codemindtechnology.com" required>
                 <small *ngIf="email.touched">
-                    <p *ngIf="email.errors?.required">Email is required</p>
                     <p *ngIf="email.errors?.pattern">valid email domain is @codemindtechnology.com</p>
                 </small>
                 </div>

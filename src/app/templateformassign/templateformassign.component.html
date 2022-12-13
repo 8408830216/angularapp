@@ -1,0 +1,41 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded shadow py-5" style=" background-color: rgb(187, 189, 209);">
+            <form (ngSubmit)="OnSubmit(myForm)" #myForm="ngForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" name="email" ngModel #email="ngModel"
+                        pattern=".+@subscription.com" placeholder="enter your email" required>
+                    <small *ngIf="email.touched">
+                        <p *ngIf="email.errors?.pattern">valid email domain is @subscription.com</p>
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label for="subscription">Select Subscription </label>
+                    <select class="form-control" name="subscription" id="subscription" [ngModel]="defaultValue">
+                        <option value="Basic">Basic</option>
+                        <option value="Advanced">Advanced</option>
+                        <option value="Pro">Pro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" id="password" #password="ngModel" placeholder="enter your password" ngModel required>
+                    <small *ngIf="!password.valid && password.touched">plese enter password</small>
+                </div>
+               
+                <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="row justify-content-center" *ngIf="submitted" style="margin-top: 50px;">
+        <div class="col-md-6 text-left rounded shadow py-5" style=" background-color: antiquewhite;">
+            <h2 style="text-align: center;">Subscription Form data</h2>
+            <p>Email : <strong>{{subscription.email}}</strong></p>
+            <p>Subscription plan : <strong>{{subscription.subscription}}</strong></p>
+            <p>Password : <strong>{{subscription.password}}</strong></p>
+        </div>
+    </div>
+
+</div>

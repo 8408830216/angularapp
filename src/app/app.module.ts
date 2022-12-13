@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Server1Component } from './server1/server1.component';
 import { DemodirectivesComponent } from './demodirectives/demodirectives.component';
 import { NgswitchComponent } from './ngswitch/ngswitch.component';
@@ -21,6 +21,8 @@ import { DirectassignComponent } from './directassign/directassign.component';
 import { AddassignmentComponent } from './addassignment/addassignment.component';
 import { SimpletemplateformComponent } from './simpletemplateform/simpletemplateform.component';
 import { FormassignmentComponent } from './formassignment/formassignment.component';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { TemplateformassignComponent } from './templateformassign/templateformassign.component';
 
 
 @NgModule({
@@ -42,12 +44,15 @@ import { FormassignmentComponent } from './formassignment/formassignment.compone
     DirectassignComponent,
     AddassignmentComponent,
     SimpletemplateformComponent,
-    FormassignmentComponent
+    FormassignmentComponent,
+    ReactiveformComponent,
+    TemplateformassignComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
