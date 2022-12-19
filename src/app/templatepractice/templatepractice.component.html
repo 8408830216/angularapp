@@ -1,0 +1,118 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class=".co-md-6 text-left rounded shadow py-5">
+            <h2>Template Driven Form</h2>
+            <form (ngSubmit)="OnSubmit(myForm)" #myForm="ngForm">
+
+                <div class="form-group">
+                    <label for="fname">First name</label>
+                    <input type="text" class="form-control" placeholder="First Name" name="fname" id="fname"
+                        #fname="ngModel" minlength="2" maxlength="15" ngModel required>
+                    <small class="text-danger" *ngIf="(fname.touched && !fname.valid) || fname.error?.minlength">
+                        First name is required 
+                    </small>
+                    </div>
+               
+                    <div class="form-group">
+                        <label for="lname">Middle name</label>
+                        <input type="text" class="form-control" placeholder="Middle Name" name="mname" id="mname"
+                            #fname="ngModel" minlength="2" maxlength="15" ngModel >
+                        
+                        </div>
+                <div class="form-group">
+                    <label for="lname"> Last Name</label>
+
+                    <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name"
+                        #lname="ngModel" ngModel required  minlength="3"/>
+                    <small *ngIf="(lname.touched && lname.invalid) || lname.error?.minLength">Enter Your Last Name.. 
+                   and should required min 3 characters
+                </small>
+            </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+
+                    <input type="number" class="form-control" id="age" name="age" placeholder="Enter your Age"
+                        #age="ngModel" ngModel required/>
+                     
+                        <small *ngIf="((age.value>=25 )) && age.touched">
+                             Enter age between 18-25</small>
+
+              
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control"  id="email" name="email" email
+                   #email="ngModel"   placeholder="Enter email" ngModel required email>
+                  
+                    <small *ngIf="(email.invalid && email.touched) || email.errors?.email"> Enter valid email</small>
+                    
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+
+                    <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number"
+                     #phone="ngModel"   ngModel required pattern="[0-9 ]{10}"/>
+                     <!-- pattern="/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/"-->
+                    <small *ngIf="(phone.invalid && phone.touched) || phone.errors?.pattern"> Enter valid phone No..</small>
+                     
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <select class="from-control" name="city" id="city" [ngModel]="default"  required>
+                        <option value="Mumbai">Pune</option>
+                        <option value="Kolkatta">Mumbai</option>
+                        <option value="Nagpur">Nagpur</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Indoor">Indoor</option>
+                    </select>
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <div *ngFor="let gender of genders" class="custome-control custome-radio">
+                        <input type="radio" id="{{gender.id}}" name="gender" value="{{gender.value}}"
+                            class="custome-control-input" [ngModel]="defaultgender">
+                        <label for="{{gender.id}}" class="custome-control-label">{{gender.value}}</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+
+                        <input type="password" class="form-control" id="password" name="password" 
+                            placeholder="Enter password" ngModel required  #password="ngModel" minlength="8"/>
+                        <small *ngIf="(password.invalid && password.touched) || password.error?.minlength">
+                            Enter Correct Password for confirmation {{password.value}}</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Confirm Password</label>
+
+                        <input type="password" class="form-control" id="confirmpass" name="confirmpass"
+                         placeholder="confirm password" ngModel required #confirmpass="ngModel" minlength="8"/>
+                        <small *ngIf="(confirmpass.touched && confirmpass.invalid) || confirmpass.error?.minlength">
+                            Conrirm Your Password {{confirmpass.value}}</small>
+                    </div>
+                    <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Submit</button>
+                    <div class="row justify-content-center mt-2" *ngIf="submitted">
+                        <div class=new>
+                            <h2>Form data</h2>
+                            <p>First Name: <strong>{{employees.fname}}</strong></p>
+                            <p>Middle Name: <strong>{{employees.mname}}</strong></p>
+                            <p>Last Name: <strong>{{employees.lname}}</strong></p>
+                            <p>Age: <strong>{{employees.age}}</strong></p>
+                            <p>Email:<strong>{{employees.email}}</strong></p>
+                            <p>Phone no.:<strong>{{employees.phone}}</strong></p>
+                            <p>City:<strong>{{employees.city}}</strong></p>
+                            <p>Gender:<strong>{{employees.gender}}</strong></p>
+                            <p>Password:<strong>{{employees.password}}</strong></p>
+                            <p>Confirm Password:<strong>{{employees.confirmpass}}</strong></p>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

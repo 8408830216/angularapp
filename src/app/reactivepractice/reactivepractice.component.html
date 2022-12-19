@@ -1,0 +1,164 @@
+<div class="container">
+    <div class="row justify content center">
+        <div class="col-md-12 text-left rounded shadow py-5">
+
+            <h2>Reactive Form</h2>
+            <form [formGroup]="myFormDetails" (ngSubmit)="onSubmit()">
+
+                <div class="form-group">
+                    <label for="firstname">Firstname</label>
+                    <input type="text" id="firstname" formControlName="firstname" class="form-control"
+                        placeholder="enter your firstname">
+                    <div *ngIf="!firstname?.valid && firstname?.touched" class="text-danger">
+                        <div *ngIf="firstname.errors?.required">
+                            First name is required
+                        </div>
+                        <div *ngIf="firstname.errors?.maxlength">
+                            First name allowed only 10 character
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="lastname">LastName</label>
+                    <input type="text" id="lastname" formControlName="lastname" class="form-control"
+                        placeholder="enter your last name">
+                    <div *ngIf="!lasttname?.valid && lastname?.touched" class="text-danger">
+                        <div *ngIf="lastname.errors?.required">
+                            Last name is required
+                        </div>
+                        <div *ngIf="lastname.errors?.maxlength">
+                            Last name allowed only ten character
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" class="form-control" id="age" formControlName="age"
+                        placeholder="enter your age">
+                    <div *ngIf="!age.valid && age.touched" class="text-danger">
+                        <div *ngIf="age.errors?.required" class="text-danger"> Age is required</div>
+                        <div *ngIf="age.errors?.min">Age is not less than 18</div>
+                        <div *ngIf="age.errors?.max">Age is not greater than 25 </div>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" formControlName="email"
+                        placeholder="enter your email">
+                    <div *ngIf="!email.valid && email.touched" class="text-danger">
+                        <div *ngIf="email.errors?.required">Email is required</div>
+                        <!-- <div *ngIf="email.errors?.pattern">Email is required</div> -->
+                        <div *ngIf="email.errors?.email">Please enter valid email</div>
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone No.</label>
+                    <input type="number" class="form-control" id="phone" formControlName="phone"
+                        placeholder="enter your phone number">
+                    <div *ngIf="!phone.valid && phone.touched" class="text-danger">
+                        <div *ngIf="phone.errors?.required">Phone number is required</div>
+                        <!-- <div *ngIf="phone.errors?.min">Only 10 number is allowed</div> 
+                            <div *ngIf="phone.errors?.max">Only 10 number is allowed</div> -->
+                        <div *ngIf="phone.errors?.pattern">Allowed only 10 digit number</div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <div *ngFor="let m of  genders" class="custom-control custom-radio">
+
+                        <input type="radio" id="{{m.id}}" formControlName="gender" value="{{m.value}}">
+                        <label for={{m.id}} class="custom-control custom-label">{{m.value}}</label>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <select class="form-control" formControlName="city">
+                        <option value="Pune">Pune</option>
+                        <option value="Indoor">Indoor</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Delhi">Delhi</option>
+
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label for="passsword">Password</label>
+                    <input type="password" id="password" formControlName="password" class="form-control"
+                        placeholder="password">
+                    <div *ngIf="!password.valid && password.touched" class="text-danger">
+                        <div *ngIf="password.errors?.required">Password is required</div>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control"
+                        appConfirmEqualValidator="password" placeholder="Conform passsword">
+                    <div *ngIf="confirmPassword.invalid && confirmPassword.touched" class="text-danger">
+                        <div *ngIf="confirmPassword.errors?.required"> Confirm Password is required</div>
+                        <div *ngIf="confirmPassword.errors?.notEqual"> Confirm Password mismatch</div>
+
+                    </div>
+
+                </div>
+
+
+                <button class="btn btn-primary mt-2" type="submit">Submit</button>
+
+            </form>
+        </div>
+
+
+
+        <div>
+           
+            <table class="table table-bordered" *ngIf="submitted">
+                <thead>
+                    <tr>
+                        <td>FirstName</td>
+                        <td>LastName</td>
+                        <td>Age</td>
+                        <td>Email</td>
+                        <td>Phone</td>
+                        <td>City</td>
+                        <td>Gender</td>
+                        <td>Password</td>
+                        <td>confirmPassword</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of  userTwo">
+                        <td>{{data.firstname}}</td>
+                        <td>{{data.lastname}}</td>
+                        <td>{{data.age}}</td>
+                        <td>{{data.email}}</td>
+                        <td>{{data.phone}}</td>
+                        <td>{{data.city}}</td>
+                        <td>{{data.gender}}</td>
+                        <td>{{data.password}}</td>
+                        <td>{{data.confirmPassword}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+    </div>
+</div>

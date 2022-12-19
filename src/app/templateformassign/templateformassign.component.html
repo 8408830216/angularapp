@@ -22,7 +22,7 @@
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" class="form-control" name="password" id="password" #password="ngModel" placeholder="enter your password" ngModel required>
-                    <small *ngIf="!password.valid && password.touched">plese enter password</small>
+                    <small *ngIf="!password.valid && password.touched">please enter password</small>
                 </div>
                
                 <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Submit</button>

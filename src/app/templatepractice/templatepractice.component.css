@@ -1,0 +1,33 @@
+.container{
+    background-color: rgb(183, 243, 243);
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+    box-shadow: 0 0 13px #ff000021;
+}
+small{
+    color: red;
+    font-size:x-large;
+    
+}
+label{
+   color:rgb(13, 43, 13);
+   font-size: x-large;
+   font-weight: 500;
+  
+}
+h2{
+    margin-left: 450px;
+    font-size: xx-large;
+    font-weight: 600;
+    color: crimson;
+   
+ 
+}
+.new{
+    margin-left: 300px;
+   font-size: x-large;
+   
+   font-weight: 500;
+}
