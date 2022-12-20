@@ -82,6 +82,9 @@ export class ReactiveformComponent implements OnInit {
   OnAddSkills() {
    (<FormArray>this.myReactiveForm.get('skills')).push(new FormControl(null, Validators.required));
   }
+  removeButton(i){
+    (<FormArray> this.myReactiveForm.get('skills')).removeAt(i)
+  }
   NaNames(control:FormControl)
   {  
      

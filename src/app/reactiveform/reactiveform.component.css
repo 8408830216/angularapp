@@ -2,7 +2,9 @@ input.ng-invalid.ng-touched {
     border: 1px solid red;
     box-shadow: 0 0 13px #ff000021;
 }
-
+.container{
+    background-color: rgb(192, 108, 108);
+}
 .btn-add {
     font-size: 12px;
     font-weight: 700;

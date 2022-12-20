@@ -29,6 +29,8 @@ import { TemplatepracticeComponent } from './templatepractice/templatepractice.c
 import { PracticeComponent } from './practice/practice.component';
 import { Servicecomp1Component } from './servicecomp1/servicecomp1.component';
 import { Servicecomp2Component } from './servicecomp2/servicecomp2.component';
+import {HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -65,7 +67,8 @@ import { Servicecomp2Component } from './servicecomp2/servicecomp2.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

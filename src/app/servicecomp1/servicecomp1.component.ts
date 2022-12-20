@@ -8,9 +8,19 @@ import { DemoService } from '../services/demo.service';
 })
 export class Servicecomp1Component implements OnInit {
 
+  productsss={};
+  dataFromAPI={}
+ 
+  //My Servicecomp1Component is depend on my DemoService
   constructor(private _demoService:DemoService) { }
 
   ngOnInit() {
+    this.productsss= this._demoService.products;
+    this._demoService.getUsersData().subscribe(data =>{
+      console.log('data from api in Servicecomp1Component ',data);
+      this.dataFromAPI=data;
+    })
+    
   }
   OnSubscribe(){
    this._demoService.display();
