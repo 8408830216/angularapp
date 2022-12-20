@@ -26,6 +26,10 @@ import { TemplateformassignComponent } from './templateformassign/templateformas
 import { AddremoveassignComponent } from './addremoveassign/addremoveassign.component';
 import { ReactivepracticeComponent } from './reactivepractice/reactivepractice.component';
 import { TemplatepracticeComponent } from './templatepractice/templatepractice.component';
+import { PracticeComponent } from './practice/practice.component';
+import { Servicecomp1Component } from './servicecomp1/servicecomp1.component';
+import { Servicecomp2Component } from './servicecomp2/servicecomp2.component';
+
 
 
 @NgModule({
@@ -52,7 +56,10 @@ import { TemplatepracticeComponent } from './templatepractice/templatepractice.c
     TemplateformassignComponent,
     AddremoveassignComponent,
     ReactivepracticeComponent,
-    TemplatepracticeComponent
+    TemplatepracticeComponent,
+    PracticeComponent,
+    Servicecomp1Component,
+    Servicecomp2Component
   ],
   imports: [
     BrowserModule,
