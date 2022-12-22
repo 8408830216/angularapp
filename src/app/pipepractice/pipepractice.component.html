@@ -1,0 +1,41 @@
+<div class="container">
+    <table style="margin: auto;" >
+        <tbody>
+            
+                <h4  style="margin-right: 30px;">***Date Pipes***</h4>
+
+<div>
+                <tr>Todays date : <strong> {{todaysDte}}</strong></tr>
+
+                <tr>1)Simple Format: <strong>{{todaysDte | date}}</strong></tr>
+                <tr>2)Short Date Format: <strong> {{todaysDte | date:'shortDate' }}</strong></tr>
+                <tr>3)Full date Format: <strong>{{todaysDte | date:'fullDate' }}</strong> </tr>
+                <tr>4)mm/dd/yyyy Format: <strong>{{todaysDte | date:'m/dd/yyyy' }}</strong> </tr>
+                <tr>5)Date uppercase:<strong>{{todaysDte | date:'fullDate' |uppercase }}</strong> </tr>
+                <tr>5)Date lowercase:<strong>{{todaysDte | date:'fullDate' |lowercase }}</strong> </tr>
+            </div>
+            
+                <h4 class="mt-4">***Currency Pipes***</h4>
+            <div style="margin-left: 175px;">
+                <tr>Price: <strong> {{price}} </strong> </tr>
+                <tr>1)Price in INR Format:<strong>{{price|currency:'INR'}}</strong> </tr>
+                <tr>2)Price in USD Format:<strong>{{price|currency:'USD'}}</strong></tr>
+                <tr>3)Price in EURO Format:<strong>{{price|currency:'EUR'}}</strong></tr>
+            </div>
+            <h4 class="mt-4">***Decimal Pipes***</h4>
+            <div style="margin-left: 260px;">
+                <tr>decimal1 <strong>{{decimal1 |number}}</strong></tr>
+                <tr>decimal2 <strong>{{decimal2 |number}}</strong></tr>
+            </div>
+            <h4 class="mt-4">***Percent Pipes***</h4>
+            <div style="margin-left: 260px;">
+                <tr>Percent1:<strong>{{percent1 |percent:'2.2'}}</strong></tr>
+                <tr>Percent2:<strong>{{percent2 |percent:'2.3'}}</strong></tr>
+            </div>
+        </tbody>
+        <h4 class="mt-4">***JSON Pipe***</h4>
+            <div>
+              {{dataObj | json}}
+            </div>
+    </table>
+</div>
