@@ -1,0 +1,29 @@
+<p>pipedemo works!</p>
+<div>
+   Todays date: {{todaysDate | date:'fullDate' |uppercase}}   
+</div>
+<!-- used to trasform data from one format to another-->
+<!-- chain pipes-multiple pipes together -->
+<!-- fullDate,shortDate,uppercase,lowercase are the builtin  -->
+<div>
+   Get values: {{ obser | async}}   <!-- async pipe will subscribe automatically to observable and get value -->
+</div>
+<div>
+    Currency Pipe:
+    <div>
+        {{price | currency:'INR'}} <br>
+        {{price | currency:'USD'}} <br>
+        {{price | currency:'EUR'}}    <!-- used to convert various currency in any country format -->
+    </div>
+    <div>
+        {{cost | number}}
+    </div>
+    <div>
+        {{obj | json}}  
+   </div> <!--  used to transfer JS object to json -->
+   <div>
+    {{price | count}}   <!--  we apply the custom pipe -->
+   </div>
+    
+    
+</div>

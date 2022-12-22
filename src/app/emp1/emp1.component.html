@@ -1,0 +1,12 @@
+<h4>Bike1 Details</h4>
+<div >
+    Bike Name: <strong>{{bName.value}}</strong> <br>
+    Company Name: <strong>{{cName.value}}</strong> <br>
+    Bike Price: <strong> {{bPrice.value}}</strong><br>
+
+    <input type="text" placeholder="Enter Bike Name" #bName><br>
+    <input type="text" placeholder="Enter Company Name" #cName><br>
+    <input type="text" placeholder="Enter Price" #bPrice><br>
+
+    <button class="mt-2" (click)="userBikeData(bName,cName,bPrice)">Update</button>
+</div>
