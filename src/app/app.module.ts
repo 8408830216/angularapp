@@ -39,6 +39,11 @@ import { Emp1Component } from './emp1/emp1.component';
 import { PipedemoComponent } from './pipedemo/pipedemo.component';
 import { CountPipe } from './count.pipe';
 import { PipepracticeComponent } from './pipepractice/pipepractice.component';
+import { FilterpipeComponent } from './filterpipe/filterpipe.component';
+import { FilterPipe } from './filter.pipe';
+import { FilterpracticeComponent } from './filterpractice/filterpractice.component';
+import { FilterassPipe } from './filterass.pipe';
+
 
 
 
@@ -80,7 +85,12 @@ import { PipepracticeComponent } from './pipepractice/pipepractice.component';
     Emp2Component,
     PipedemoComponent,
     CountPipe,
-    PipepracticeComponent
+    PipepracticeComponent,
+    FilterpipeComponent,
+    FilterPipe,
+    FilterpracticeComponent,
+    FilterassPipe,
+    
   ],
   imports: [
     BrowserModule,

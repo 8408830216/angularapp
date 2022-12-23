@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-md-8 form-inline mb-2">
+        <h3 class="mb-4"><mark>Practice on Filter Pipes </mark> </h3>
+        <label for="bikes" class="mb-2"> <strong>Search Bike Details</strong> </label>
+        <input type="text" class="form-control" id="bikes" style="background-color: rgb(239, 235, 243);" placeholder="Search" [(ngModel)]="searchBike">
+    </div>
+    <div class="col-md-8">
+        <table class="table">
+            <thead>
+                <tr class="table-primary">
+                    <th>Bike Name</th>
+                    <th>Company Name</th>
+                    <th>Price</th>
+                    <th>Number Plate</th>
+                    <th>Average per lit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-danger" *ngFor="let bks of bikesArray | filterass:searchBike " >
+                    <td>{{bks.bName}}</td>
+                    <td>{{bks.cName}}</td>
+                    <td>{{bks.price}}</td>
+                    <td>{{bks.nPlate}}</td>
+                    <td>{{bks.avg}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
