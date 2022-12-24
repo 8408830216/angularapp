@@ -2,3 +2,11 @@
 h1{
     background-color: red;
 }
+
+header{
+    background-color: rgb(188, 231, 231);
+}
+
+.container{
+    background-color: bisque;
+}

@@ -43,6 +43,15 @@ import { FilterpipeComponent } from './filterpipe/filterpipe.component';
 import { FilterPipe } from './filter.pipe';
 import { FilterpracticeComponent } from './filterpractice/filterpractice.component';
 import { FilterassPipe } from './filterass.pipe';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { ProductComponent } from './product/product.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { TechstackComponent } from './techstack/techstack.component';
+import { EducationComponent } from './education/education.component';
+import { ProjectComponent } from './project/project.component';
+import { PersonaldetailComponent } from './personaldetail/personaldetail.component';
 
 
 
@@ -90,6 +99,15 @@ import { FilterassPipe } from './filterass.pipe';
     FilterPipe,
     FilterpracticeComponent,
     FilterassPipe,
+    AboutusComponent,
+    ContactusComponent,
+    ProductComponent,
+    HomeComponent,
+    LoginComponent,
+    TechstackComponent,
+    EducationComponent,
+    ProjectComponent,
+    PersonaldetailComponent,
     
   ],
   imports: [
