@@ -52,6 +52,11 @@ import { TechstackComponent } from './techstack/techstack.component';
 import { EducationComponent } from './education/education.component';
 import { ProjectComponent } from './project/project.component';
 import { PersonaldetailComponent } from './personaldetail/personaldetail.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { LaptopComponent } from './product/laptop/laptop.component';
+import { TvComponent } from './product/tv/tv.component';
+import { TabletComponent } from './product/tablet/tablet.component';
+import { WashingmachineComponent } from './product/washingmachine/washingmachine.component';
 
 
 
@@ -108,6 +113,11 @@ import { PersonaldetailComponent } from './personaldetail/personaldetail.compone
     EducationComponent,
     ProjectComponent,
     PersonaldetailComponent,
+    PagenotfoundComponent,
+    LaptopComponent,
+    TvComponent,
+    TabletComponent,
+    WashingmachineComponent,
     
   ],
   imports: [
