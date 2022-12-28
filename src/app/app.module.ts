@@ -45,7 +45,6 @@ import { FilterpracticeComponent } from './filterpractice/filterpractice.compone
 import { FilterassPipe } from './filterass.pipe';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
-import { ProductComponent } from './product/product.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { TechstackComponent } from './techstack/techstack.component';
@@ -53,12 +52,9 @@ import { EducationComponent } from './education/education.component';
 import { ProjectComponent } from './project/project.component';
 import { PersonaldetailComponent } from './personaldetail/personaldetail.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { LaptopComponent } from './product/laptop/laptop.component';
-import { TvComponent } from './product/tv/tv.component';
-import { TabletComponent } from './product/tablet/tablet.component';
-import { WashingmachineComponent } from './product/washingmachine/washingmachine.component';
 import { DemopostComponent } from './demopost/demopost.component';
 import { PostdetailsComponent } from './postdetails/postdetails.component';
+import { ProductsModule } from './product/products.module';
 
 
 
@@ -76,7 +72,6 @@ import { PostdetailsComponent } from './postdetails/postdetails.component';
     DirectiveassignComponent,
     NgassignmentComponent,
     AttriComponent,
-    CustdirDirective,
     DemoComponent,
     ChildassignComponent,
     OutputassignComponent,
@@ -108,7 +103,6 @@ import { PostdetailsComponent } from './postdetails/postdetails.component';
     FilterassPipe,
     AboutusComponent,
     ContactusComponent,
-    ProductComponent,
     HomeComponent,
     LoginComponent,
     TechstackComponent,
@@ -116,22 +110,25 @@ import { PostdetailsComponent } from './postdetails/postdetails.component';
     ProjectComponent,
     PersonaldetailComponent,
     PagenotfoundComponent,
-    LaptopComponent,
-    TvComponent,
-    TabletComponent,
-    WashingmachineComponent,
     DemopostComponent,
     PostdetailsComponent,
     
   ],
   imports: [
     BrowserModule,
+    ProductsModule,  //we need to implement this feature module before AppRoutingModule 
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(){
+    console.log('AppModule module call');
+    
+  }
+ }
