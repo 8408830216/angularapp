@@ -6,12 +6,11 @@ import { TvComponent } from './tv/tv.component';
 import { WashingmachineComponent } from './washingmachine/washingmachine.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductComponent } from './product.component';
-import { CustdirDirective } from '../custdir.directive';
 import { UtilityModule } from '../models/utility.module';
 
 const prodRoutes: Routes = [
   {
-    path: 'product', component: ProductComponent, children: [
+    path: '', component: ProductComponent, children: [
       { path: 'laptop', component: LaptopComponent },
       { path: 'tablet', component: TabletComponent },
       { path: 'tv', component: TvComponent },

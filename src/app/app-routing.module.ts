@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { DemopostComponent } from './demopost/demopost.component';
@@ -25,11 +25,14 @@ const routes: Routes = [
   { path: 'details', component: PersonaldetailComponent},
   {path:'post',component:DemopostComponent},  //api data fetch
   {path:'postdetails/:id',component:PostdetailsComponent},      //route parameter
+  {path:'product',loadChildren:'./product/products.module#ProductsModule'}, //lazy loading
+  {path:'orders',loadChildren:'./orders/orders.module#OrdersModule'}, //lazy loading
   { path: '**', component: PagenotfoundComponent}  //pagenot found path,error path always in last(wildCard)
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
+  // imports: [RouterModule.forRoot(routes,{ preloadingStrategy:PreloadAllModules})], //preloading stretergy
   exports: [RouterModule]
 })
 export class AppRoutingModule {

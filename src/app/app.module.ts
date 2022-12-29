@@ -54,7 +54,8 @@ import { PersonaldetailComponent } from './personaldetail/personaldetail.compone
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { DemopostComponent } from './demopost/demopost.component';
 import { PostdetailsComponent } from './postdetails/postdetails.component';
-import { ProductsModule } from './product/products.module';
+
+
 
 
 
@@ -116,7 +117,6 @@ import { ProductsModule } from './product/products.module';
   ],
   imports: [
     BrowserModule,
-    ProductsModule,  //we need to implement this feature module before AppRoutingModule 
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
