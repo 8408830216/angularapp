@@ -54,6 +54,8 @@ import { PersonaldetailComponent } from './personaldetail/personaldetail.compone
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { DemopostComponent } from './demopost/demopost.component';
 import { PostdetailsComponent } from './postdetails/postdetails.component';
+import { AdduserComponent } from './adduser/adduser.component';
+import { RapidapiComponent } from './rapidapi/rapidapi.component';
 
 
 
@@ -113,6 +115,8 @@ import { PostdetailsComponent } from './postdetails/postdetails.component';
     PagenotfoundComponent,
     DemopostComponent,
     PostdetailsComponent,
+    AdduserComponent,
+    RapidapiComponent,
     
   ],
   imports: [

@@ -1,0 +1,68 @@
+<blockquote class="blockquote text-center">
+    <p class="mb-0">BB Finance API Data</p> <br>
+    <p class="blockquote-footer">News Data</p>
+  </blockquote>
+<div>
+    <div>
+        <div>
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>**Card**</th>
+                        <th>**Date**</th>
+                        <th>**Id**</th>
+                        <th>**URL**</th>
+                        <th>**Image**</th>
+                        <th>**Title**</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let nData of newsData">
+                        <td>{{nData.card}}</td>
+                        <td>{{nData.date}} </td> 
+                        <td>{{nData.id}}}</td>
+                        <td>{{nData.longURL}}</td>
+                        <td>{{nData.thumbnailImage}}</td>
+                        <td>{{nData.title}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<blockquote class="blockquote text-center">
+    <p class="mb-0">BB Finance API Data</p> <br>
+    <p class="blockquote-footer">Quote Data</p>
+  </blockquote>
+<div>
+    <div>
+        <div>
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>**Name**</th>
+                        <th>**Region**</th>
+                        <th>**Security Type**</th>
+                        <th>**Symbol**</th>
+                        <th>**Exchange**</th>
+                        <th>**Country**</th>
+                        <th>**Currency**</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let qData of qoutesData">
+                        <td>{{qData.name}}</td>
+                        <td>{{qData.region}}</td>
+                        <td>{{qData.securityType}}</td>
+                        <td>{{qData.symbol}} </td> 
+                        <td>{{qData.exchange}}</td>
+                        <td>{{qData.country}}</td>
+                        <td>{{qData.currency}}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> 
