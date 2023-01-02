@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { FireBasePost } from '../models/firebasepost';
+import { FirebaseService } from '../services/firebase.service';
 
 
 @Component({
@@ -9,6 +11,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./reactiveform.component.css']
 })
 export class ReactiveformComponent implements OnInit {
+
   submitted: boolean = false;
   notAllowedNames = ['Codemind', 'Technology'];
   genders = [
@@ -22,14 +25,19 @@ export class ReactiveformComponent implements OnInit {
     }
   ]
   myReactiveForm: FormGroup;
- 
-  
-  constructor(private _fb:FormBuilder) { 
+  firebasePost: FireBasePost
+
+  constructor(private _fb: FormBuilder, private _firebaseService: FirebaseService) {
     this.createForm();
   }
 
   ngOnInit() {
-    
+
+    this._firebaseService.getPostDataFirebase().subscribe(res =>{
+      console.log('get data from database',res);
+      
+    })  //we get the data from database
+
     // setTimeout(() => {
     //   this.myReactiveForm.setValue({
     //     'userDetails' : {
@@ -51,7 +59,7 @@ export class ReactiveformComponent implements OnInit {
     // }, 3500);
   }
 
-  createForm(){
+  createForm() {
     // this.myReactiveForm = new FormGroup({
     //   'userDetails': new FormGroup({
     //     'username': new FormControl('', [Validators.required, this.NaNames.bind(this)]),
@@ -63,41 +71,52 @@ export class ReactiveformComponent implements OnInit {
     //    new FormControl(null, Validators.required)
     //   ])
     // })
-    this.myReactiveForm=this._fb.group({
-      userDetails:this._fb.group({
-        username:['',Validators.required],
-        email:['',Validators.required]
+    this.myReactiveForm = this._fb.group({
+      userDetails: this._fb.group({
+        username: ['', Validators.required],
+        email: ['', Validators.required]
       }),
-      course:['Angular'],
-      gender:['Male'],
+      course: ['Angular'],
+      gender: ['Male'],
       skills: this._fb.array([''])
     })
   }
-  OnSubmit()
-  {
+  OnSubmit() {
     this.submitted = true;
     console.log(this.myReactiveForm);
+    //console.log(this.myReactiveForm['controls'].userDetails['controls'].username.value);  exact value gheychi asel tr
     
+    this.firebasePost = new FireBasePost();
+    this.firebasePost.username=this.myReactiveForm['controls'].userDetails['controls'].username.value;
+    this.firebasePost.email=this.myReactiveForm['controls'].userDetails['controls'].email.value;
+    this.firebasePost.course=this.myReactiveForm['controls'].course.value;
+    this.firebasePost.gender=this.myReactiveForm['controls'].gender.value;
+    this.firebasePost.skills=this.myReactiveForm['controls'].skills.value;
+    // console.log('firebasepost class',this.firebasePost);
+    
+    this._firebaseService.createPostReactive(this.firebasePost).subscribe(res=>{
+      console.log('Post from reactive form',res);   //we store this in firebase database
+      
+    })
   }
   OnAddSkills() {
-   (<FormArray>this.myReactiveForm.get('skills')).push(new FormControl(null, Validators.required));
+    (<FormArray>this.myReactiveForm.get('skills')).push(new FormControl(null, Validators.required));
   }
-  removeButton(i){
-    (<FormArray> this.myReactiveForm.get('skills')).removeAt(i)
+  removeButton(i) {
+    (<FormArray>this.myReactiveForm.get('skills')).removeAt(i)
   }
-  NaNames(control:FormControl)
-  {  
-     
-    if(this.notAllowedNames.indexOf(control.value) !== -1) {
-      return {'namesNotAllowed': true}
+  NaNames(control: FormControl) {
+
+    if (this.notAllowedNames.indexOf(control.value) !== -1) {
+      return { 'namesNotAllowed': true }
     }
     return null;
   }
-  NaEmails(control:FormControl): Promise<any> | Observable<any> {
+  NaEmails(control: FormControl): Promise<any> | Observable<any> {
     const myResponse = new Promise<any>((resolve, reject) => {
       setTimeout(() => {
-        if(control.value === 'codemindtechnology@gmail.com'){
-          resolve({'emailNotAllowed': true})
+        if (control.value === 'codemindtechnology@gmail.com') {
+          resolve({ 'emailNotAllowed': true })
         } else {
           resolve(null)
         }

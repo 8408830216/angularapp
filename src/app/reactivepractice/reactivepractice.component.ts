@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ReactiveFireBase } from '../models/reactiveFireBase';
 import { userData } from '../models/userDetails';
+import { FirebaseService } from '../services/firebase.service';
 
 
 
@@ -17,7 +19,8 @@ export class ReactivepracticeComponent implements OnInit {
   genders=[{id:'1',value:'Female'},{id:'2',value:'Male'}]
   user;
   userTwo:any[]=[];
-  constructor() { 
+  reactiveFirebase:ReactiveFireBase
+  constructor(private _firebaseService:FirebaseService) { 
     this.createForm();
   }
 
@@ -79,7 +82,20 @@ this.user.confirmPassword=this.myFormDetails.value.confirmPassword;
 this.userTwo.push(this.user);
 console.log(this.myFormDetails.value)
 
+this.reactiveFirebase=new ReactiveFireBase();
+this.reactiveFirebase.firstname=this.myFormDetails['controls'].firstname.value
+this.reactiveFirebase.lastname=this.myFormDetails['controls'].lastname.value
+this.reactiveFirebase.age=this.myFormDetails['controls'].age.value
+this.reactiveFirebase.email=this.myFormDetails['controls'].email.value
+this.reactiveFirebase.phone=this.myFormDetails['controls'].phone.value
+this.reactiveFirebase.city=this.myFormDetails['controls'].city.value
+this.reactiveFirebase.gender=this.myFormDetails['controls'].gender.value
+this.reactiveFirebase.password=this.myFormDetails['controls'].password.value
 
+this._firebaseService.postReactivePractice(this.reactiveFirebase).subscribe(data =>{
+  console.log('Post Data from reactiveForm Practice',data);
+  
+})
   }
 
 

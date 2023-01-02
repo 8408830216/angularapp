@@ -56,6 +56,7 @@ import { DemopostComponent } from './demopost/demopost.component';
 import { PostdetailsComponent } from './postdetails/postdetails.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { RapidapiComponent } from './rapidapi/rapidapi.component';
+import { FirebaseapiComponent } from './firebaseapi/firebaseapi.component';
 
 
 
@@ -117,6 +118,7 @@ import { RapidapiComponent } from './rapidapi/rapidapi.component';
     PostdetailsComponent,
     AdduserComponent,
     RapidapiComponent,
+    FirebaseapiComponent,
     
   ],
   imports: [
