@@ -1,0 +1,19 @@
+<table class="table">
+<thead class="table-dark">
+    <tr>
+        <th>User Id</th>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Completed</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let prc of practice">
+        <td>{{prc.userId}}</td>
+        <td>{{prc.id}}</td>
+        <td>{{prc.title}}</td>
+        <td>{{prc.completed}}</td>
+    </tr>
+</tbody>
+</table>
+

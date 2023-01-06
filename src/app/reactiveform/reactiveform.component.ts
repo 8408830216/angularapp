@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { from, interval, Observable } from 'rxjs';
 import { FireBasePost } from '../models/firebasepost';
 import { FirebaseService } from '../services/firebase.service';
+import{filter, map, take, takeLast, toArray} from 'rxjs/operators'
 
 
 @Component({
@@ -33,10 +34,61 @@ export class ReactiveformComponent implements OnInit {
 
   ngOnInit() {
 
-    this._firebaseService.getPostDataFirebase().subscribe(res =>{
-      console.log('get data from database',res);
-      
-    })  //we get the data from database
+   // const data =from(this._firebaseService.users) ;   //if we wnnt to convert array data into observable
+    
+    //data.pipe(
+     // map(x=>x.name)  
+   // ).subscribe(res=>{
+     // console.log('res',res); //using map rxjs operator we will manipulate the observable data
+    //}) //we will manupulate the data before subscribe
+
+//manipulate the data before subscribe
+     //map operator
+    // this._firebaseService.getPostDataFirebase().pipe(
+    //   map(responseData=>{
+    //     const postArray=[];
+    //     for(const key in responseData){
+    //       if(responseData.hasOwnProperty(key)) {    //hasOwnProperty checked that key is present or not
+    //         postArray.push({...responseData[key], id:key})
+    //       }     
+    //     }
+    //     return postArray;
+    //   })
+    // )
+    // .subscribe(res =>{
+    //   console.log('after manipulate data',res);
+    // })
+
+    //filter operator
+    // const data =from(this._firebaseService.users)
+    // data.pipe(
+    //     filter(u => u.gender == 'Male'),
+    //     toArray()     //used to collect all the values emitted by the source and transform into array
+    //   ).subscribe(res=>{
+    //     console.log('filter operator data',res);
+        
+    //   })
+
+    //Take operator
+    // const source=interval(1000);
+    // source.pipe(
+    //   take(5)).subscribe(res =>{
+    //   console.log('interval example',res); 
+    // })
+
+      //Take last
+      let randomNames=['Prashant','Patil','Angular','HTML','Javascript','Typescript']
+      const source=from(randomNames);
+      source.pipe(
+        takeLast(2)
+      ).subscribe(res =>{
+        console.log('take last operator example',res);
+        
+      })
+
+ //     this._firebaseService.getPostDataFirebase().subscribe(res=>{
+  //      console.log('get data from database',res);
+  // })  //we get the data from firebase database
 
     // setTimeout(() => {
     //   this.myReactiveForm.setValue({

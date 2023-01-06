@@ -48,7 +48,7 @@ data={
   dept:"IT",
   position:"UI Developer",
   salary:70000,
-}
+}   //pass this parant data to the childassign comp using input decorator
 foods: string[] = [];
 bikes:any[]=[];
 

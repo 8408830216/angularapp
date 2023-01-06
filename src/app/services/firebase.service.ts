@@ -12,7 +12,11 @@ export class FirebaseService {
   constructor(private _httpClient: HttpClient) { }
 
   url = 'https://angular-crud-72aa7-default-rtdb.firebaseio.com/';  //firebaseURL
-
+users:any[]=[
+  {id:'101',name:'forRxjs',gender:'Male'},
+  {id:'102',name:'forrxjs',gender:'Female'},
+  {id:'103',name:'prashant',gender:'Male'}
+]
   createPost() {
     let postData = {
       title: 'This is Angular8 crud',

@@ -1,0 +1,112 @@
+input.ng-invalid.ng-touched
+{
+    border: 1px solid red;
+    box-shadow: 0 0 7px inset red;
+}
+.btn-add
+{
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(0,0,0,0.397);
+}
+.btn-add i{
+    font-size: 37px;
+    line-height: 15px;
+    display: inline-block;
+    position: relative;
+    top: 7px;
+    margin-right: 3px;
+}
+.btn-add:hover{
+    border: 1px solid rgb(230, 190, 223);
+    color: red;
+}
+.container{
+    padding: 0px;
+}
+.row1{
+    margin-left: -195px;
+}
+.row1 .col-md-12{
+    padding: 10px 100px 5px 100px;
+}
+.btnAdd{
+    width: 100%;
+}
+.btn{
+    font-weight: bold;
+    font-size: 18px;
+}
+.tablerow{
+    width: 100vw;
+}
+.table{
+    width: 88vw;
+    border: 1px solid rgb(162, 247, 253);
+}
+.table th{
+    width: 10vw;
+    height: 6vh;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid black;
+    background-color: rgb(0, 0, 0);
+}
+.btnRefresh{
+    background-color: rgb(241, 178, 210);
+    border: none;
+    margin-left: 30px;
+}
+.btnEdit{
+    background-color: rgb(22, 228, 132);
+    border: none;
+    color: rgb(22, 22, 22);
+    width: 90px;
+
+}
+.btnDelete{
+    background-color: rgb(241, 161, 12);
+    border: none;
+    color: rgb(7, 6, 6);
+    width: 110px;
+}
+.table td{
+    width: 10vw;
+    height: 6vh;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+.form-group1{
+    display: inline-block;
+    width: 40vw;
+    margin: 10px 10px 10px 10px;
+}
+.table tr:nth-child(even){
+    background-color: rgb(231, 230, 230);
+}
+.table tr:nth-child(odd){
+    background-color: rgb(251, 249, 249);
+}
+
+.form-label{
+    font-weight: bold;
+    font-size: 18px;
+}
+.inputPanel{
+    width: 100vw;
+}
+.selectAction{
+    background-color: rgb(204, 97, 97);
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 2px 5px 2px;
+    border-radius: 5px 5px 5px 5px;
+}
+.selectAction option{
+    background-color: white;
+    color: black;
+}
