@@ -59,7 +59,10 @@ import { RapidapiComponent } from './rapidapi/rapidapi.component';
 import { FirebaseapiComponent } from './firebaseapi/firebaseapi.component';
 import { CrudoperationComponent } from './crudoperation/crudoperation.component';
 import { NewoneComponent } from './newone/newone.component';
-
+import { Practice1Component } from './practice1/practice1.component';
+import { RapidgetComponent } from './rapidget/rapidget.component';
+import { PracticeReactiveComponent } from './practice-reactive/practice-reactive.component';
+import { PracticeTemplateComponent } from './practice-template/practice-template.component';
 
 
 
@@ -123,7 +126,10 @@ import { NewoneComponent } from './newone/newone.component';
     FirebaseapiComponent,
     CrudoperationComponent,
     NewoneComponent,
-    
+    Practice1Component,
+    RapidgetComponent,
+    PracticeReactiveComponent,
+    PracticeTemplateComponent
   ],
   imports: [
     BrowserModule,

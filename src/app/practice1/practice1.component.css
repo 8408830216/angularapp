@@ -1,0 +1,22 @@
+#div1{
+    width: 70%;;
+    float: left;
+    background-color: rgb(241, 142, 76);
+}
+
+#div2{
+    width: 30%;;
+    float: left;
+    background-color: #bda521;
+}
+h1{
+    font-size: 80px;
+}
+@media screen  and (max-width:800px){
+    #div1{
+        width: 50%;
+    }
+    #div2{
+        width: 50%;
+    }
+}

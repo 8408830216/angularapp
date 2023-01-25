@@ -9,6 +9,8 @@ import { PostService } from './services/post.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
+
   constructor(private _demoService:DemoService,private _postService:PostService){
 
   }

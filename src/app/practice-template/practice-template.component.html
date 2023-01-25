@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class=".co-md-6 text-left rounded shadow py-5">
+            <form (ngSubmit)="OnSubmit(myForm)" #myForm="ngForm">
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password"
+                        placeholder="enter password" ngModel required #password="ngModel" minlength="8"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        <small *ngIf="(password.invalid && password.touched) || password.error?.minlength" style="color: red;">
+                            please enter password
+                        </small>
+                </div>
+                <div class="form-group">
+                    <label for="cpassword">Conform Password</label>
+                    <input type="password" class="form-control" id="cpassword" name="cpassword"
+                        placeholder="Conform password" ngModel required #cpassword="ngModel" minlength="8" 
+                        pattern="{{password.value}}">
+                        <small *ngIf="(cpassword.touched && cpassword.invalid) || cpassword.error?.minlength  && cpassword.error.val"  style="color: red;">
+                            password does not match {{cpassword.value}}
+                        </small>
+                </div>
+                <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
