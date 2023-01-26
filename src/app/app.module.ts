@@ -34,8 +34,6 @@ import { Comp1Component } from './comp1/comp1.component';
 import { Comp2Component } from './comp2/comp2.component';
 import { Comp3Component } from './comp3/comp3.component';
 import { Comp4Component } from './comp4/comp4.component';
-import { Emp2Component } from './emp2/emp2.component';
-import { Emp1Component } from './emp1/emp1.component';
 import { PipedemoComponent } from './pipedemo/pipedemo.component';
 import { CountPipe } from './count.pipe';
 import { PipepracticeComponent } from './pipepractice/pipepractice.component';
@@ -63,6 +61,9 @@ import { Practice1Component } from './practice1/practice1.component';
 import { RapidgetComponent } from './rapidget/rapidget.component';
 import { PracticeReactiveComponent } from './practice-reactive/practice-reactive.component';
 import { PracticeTemplateComponent } from './practice-template/practice-template.component';
+import { SubservComponent } from './subserv/subserv.component';
+import { Data1Component } from './data1/data1.component';
+import { Data2Component } from './data2/data2.component';
 
 
 
@@ -101,8 +102,6 @@ import { PracticeTemplateComponent } from './practice-template/practice-template
     Comp2Component,
     Comp3Component,
     Comp4Component,
-    Emp1Component,
-    Emp2Component,
     PipedemoComponent,
     CountPipe,
     PipepracticeComponent,
@@ -129,7 +128,10 @@ import { PracticeTemplateComponent } from './practice-template/practice-template
     Practice1Component,
     RapidgetComponent,
     PracticeReactiveComponent,
-    PracticeTemplateComponent
+    PracticeTemplateComponent,
+    SubservComponent,
+    Data1Component,
+    Data2Component
   ],
   imports: [
     BrowserModule,
