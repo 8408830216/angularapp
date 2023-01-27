@@ -131,7 +131,8 @@ import { Data2Component } from './data2/data2.component';
     PracticeTemplateComponent,
     SubservComponent,
     Data1Component,
-    Data2Component
+    Data2Component,
+    CustdirDirective
   ],
   imports: [
     BrowserModule,
