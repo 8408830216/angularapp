@@ -1,0 +1,28 @@
+
+<nav class="nav">
+    <div class="container">
+        <h1>Angular Assignment</h1>
+    </div>
+</nav>
+<table class="table table-bordered mt-3">
+    <thead class="header">
+        <tr>
+            <th scope="col">User ID</th>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Complete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let details of todosDetails">
+            <td>{{details.userId}}</td>
+            <td>{{details.id}}</td>
+            <td>{{details.title}}</td>
+            <td>
+                <input type="checkbox" [checked]="details.completed">
+            </td>
+            
+            
+        </tr>
+    </tbody>
+</table>
